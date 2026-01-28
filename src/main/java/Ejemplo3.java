@@ -10,8 +10,10 @@ public class Ejemplo3 {
                     return numero * numero2;
                 case '/':
                     return numero / numero2;
+                default:
+                    throw new IllegalArgumentException("Operador no válido");
             }
         }
-        return 0;
+        throw new IllegalArgumentException("ERROR");
     }
 }
