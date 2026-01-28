@@ -1,6 +1,6 @@
 public class Ejemplo3 {
     public int calcula(int numero, int numero2, char operador) {
-        if (numero < 1 || numero > 1000 || numero2 < 1 || numero2 > 1000){
+        if (numero > 1 || numero < 1000 || numero2 > 1 || numero2 < 1000){
             switch (operador){
                 case '+':
                     return numero + numero2;
