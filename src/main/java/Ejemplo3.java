@@ -14,6 +14,6 @@ public class Ejemplo3 {
                     throw new IllegalArgumentException("Operador no válido");
             }
         }
-        throw new IllegalArgumentException("ERROR");
+        else throw new IllegalArgumentException("ERROR");
     }
 }
