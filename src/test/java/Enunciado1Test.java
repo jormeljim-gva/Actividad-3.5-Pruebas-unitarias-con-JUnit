@@ -23,7 +23,7 @@ class Enunciado1Test {
 
         assertEquals("ERROR", Enunciado1.asignaPrima(1111, "fernando", 10, '-'));
 
-        assertEquals("ERROR", Enunciado1.asignaPrima(20, "jordimel", 10, '-'));
+        assertEquals("ERROR", Enunciado1.asignaPrima(20, "jordimelgkkg", 10, '-'));
 
         assertEquals("ERROR", Enunciado1.asignaPrima(20, "", 10, '-'));
 
