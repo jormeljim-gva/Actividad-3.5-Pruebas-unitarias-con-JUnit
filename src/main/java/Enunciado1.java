@@ -1,23 +1,29 @@
 public class Enunciado1 {
     public String asignaPrima(int numEmpleado, String nombreEmpleado, int mesesTrabajo, char directivo) {
-        if(numEmpleado >= 0 && String.valueOf(numEmpleado).length() == 3 && nombreEmpleado.length() >= 1 && nombreEmpleado.length() <= 10 &&
+        if(numEmpleado >= 0 && String.valueOf(numEmpleado).length() == 3 && numEmpleado != 000 && nombreEmpleado.length() >= 1 && nombreEmpleado.length() <= 10 &&
         mesesTrabajo >= 0 && String.valueOf(mesesTrabajo).length() == 3 && directivo == '+' || directivo == '-'){
 
             if (mesesTrabajo >= 12) {
-                if (directivo == '+') {
-                    return "P1";
-                } else {
-                    return "P2";
+                switch (directivo) {
+                    case '+':
+                        return "P1";
+                    case '-':
+                        return "P2";
+                    default:
+                        return "ERROR";
                 }
-            } else {
-                if (directivo == '+') {
-                    return "P3";
-                } else {
-                    return "P4";
+            } else{
+                switch (directivo) {
+                    case '+':
+                        return "P3";
+                    case '-':
+                        return "P4";
+                    default:
+                        return "ERROR";
                 }
             }
 
         }
-        else throw new IllegalArgumentException("ERROR");
+        else return "ERROR";
     }
 }

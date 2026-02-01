@@ -17,6 +17,8 @@ class Ejemplo1Test {
         ejemplo1 = null;
     }
 
+
+
     @Test
     void clasesEquivalencia() {
         assertEquals("SI", ejemplo1.esAdmitido(65));
