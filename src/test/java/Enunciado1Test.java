@@ -6,37 +6,57 @@ import static org.junit.jupiter.api.Assertions.*;
 class Enunciado1Test {
     private static Enunciado1 enunciado1;
 
-    @BeforeEach
-    void setUp() {
-        enunciado1 = new Enunciado1();
+    @Test
+    void calculaValidos_ParticionEquivalente() {
+        assertEquals("P4", Enunciado1.asignaPrima(20, "fernando", 10, '-'));
+
+        assertEquals("P3", Enunciado1.asignaPrima(20, "fernando", 8, '+'));
+
+        assertEquals("P2", Enunciado1.asignaPrima(20, "fernando", 18, '-'));
+
+        assertEquals("P1", Enunciado1.asignaPrima(20, "fernando", 30, '+'));
     }
 
     @Test
-    void calculaValidos() {
-        assertEquals("P1", enunciado1.asignaPrima(20, "fernando", 030, '+'));
-        assertEquals("P2", enunciado1.asignaPrima(20, "fernando", 018, '-'));
-        assertEquals("P3", enunciado1.asignaPrima(20, "fernando", 008, '+'));
-        assertEquals("P4", enunciado1.asignaPrima(20, "fernando", 010, '-'));
+    void calculaInvalidos_ParticionEquivalente() {
+        assertEquals("ERROR", Enunciado1.asignaPrima(-2, "fernando", 10, '-'));
+
+        assertEquals("ERROR", Enunciado1.asignaPrima(1111, "fernando", 10, '-'));
+
+        assertEquals("ERROR", Enunciado1.asignaPrima(20, "minombreesaitor", 10, '-'));
+
+        assertEquals("ERROR", Enunciado1.asignaPrima(20, "", 10, '-'));
+
+        assertEquals("ERROR", Enunciado1.asignaPrima(20, "fernando", -3, '-'));
+
+        assertEquals("ERROR", Enunciado1.asignaPrima(20, "fernando", 2004, '-'));
+
+        assertEquals("ERROR", Enunciado1.asignaPrima(20, "fernando", 10, '*'));
     }
 
     @Test
-    void calculaLimitesValidos() {
+    void calculaValidos_ValoresLimite() {
+        assertEquals("P4", Enunciado1.asignaPrima(1, "a", 0, '-'));
 
+        assertEquals("P3", Enunciado1.asignaPrima(2, "ai", 1, '+'));
+
+        assertEquals("P2", Enunciado1.asignaPrima(998, "aitorven", 998, '-'));
+
+        assertEquals("P1", Enunciado1.asignaPrima(999, "aitorven", 999, '+'));
     }
 
     @Test
-    void calculaInvalidos() {
-        assertEquals("ERROR", enunciado1.asignaPrima(-2, "fernando", 010, '-'));
-        assertEquals("ERROR", enunciado1.asignaPrima(1111, "fernando", 010, '-'));
-        assertEquals("ERROR", enunciado1.asignaPrima(020, "minombreesaitor", 010, '-'));
-        assertEquals("ERROR", enunciado1.asignaPrima(020, "", 010, '-'));
-        assertEquals("ERROR", enunciado1.asignaPrima(020, "fernando", -3, '-'));
-        assertEquals("ERROR", enunciado1.asignaPrima(020, "fernando", 2004, '-'));
-        assertEquals("ERROR", enunciado1.asignaPrima(020, "fernando", 010, '*'));
-    }
+    void calculaInvalidos_ValoresLimite() {
+        assertEquals("ERROR", Enunciado1.asignaPrima(0, "fernando", 0, '-'));
 
-    @Test
-    void calculaLimitesInvalidos() {
+        assertEquals("ERROR", Enunciado1.asignaPrima(1000, "fernando", 0, '-'));
 
+        assertEquals("ERROR", Enunciado1.asignaPrima(1, "fernando", -1, '-'));
+
+        assertEquals("ERROR", Enunciado1.asignaPrima(1, "fernando", 1000, '-'));
+
+        assertEquals("ERROR", Enunciado1.asignaPrima(2, "", 1, '+'));
+
+        assertEquals("ERROR", Enunciado1.asignaPrima(2, "aitorventura", 1, '+'));
     }
 }
