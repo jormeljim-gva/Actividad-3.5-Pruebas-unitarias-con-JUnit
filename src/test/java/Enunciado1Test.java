@@ -14,8 +14,8 @@ class Enunciado1Test {
     @Test
     void calculaValidos() {
         assertEquals("P1", enunciado1.asignaPrima(20, "fernando", 030, '+'));
-        assertEquals("P2", enunciado1.asignaPrima(20, "fernando", 18, '-'));
-        assertEquals("P3", enunciado1.asignaPrima(20, "fernando", 8, '+'));
+        assertEquals("P2", enunciado1.asignaPrima(20, "fernando", 018, '-'));
+        assertEquals("P3", enunciado1.asignaPrima(20, "fernando", 008, '+'));
         assertEquals("P4", enunciado1.asignaPrima(20, "fernando", 010, '-'));
     }
 
